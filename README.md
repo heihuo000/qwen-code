@@ -69,11 +69,11 @@ qwen -p "删除任务 test"
 
 | 文档 | 说明 |
 |------|------|
-| [UPDATE_PATCH_GUIDE.md](./UPDATE_PATCH_GUIDE.md) | 🔄 **官方更新融合指南**（推荐优先阅读） |
-| [PATCH_QUICK_REF.md](./PATCH_QUICK_REF.md) | 📋 补丁融合速查表 |
-| [NPM_INSTALL_GUIDE.md](./NPM_INSTALL_GUIDE.md) | 📦 npm 源码安装指南 |
-| [SCHEDULE_PATCH_GUIDE.md](./SCHEDULE_PATCH_GUIDE.md) | 🔧 补丁修改详细指南 |
-| [SCHEDULE_AGENT_README.md](./SCHEDULE_AGENT_README.md) | 🤖 Schedule Agent 说明 |
+| [官方更新融合指南.md](./官方更新融合指南.md) | 🔄 官方更新融合指南（推荐优先阅读） |
+| [补丁速查表.md](./补丁速查表.md) | 📋 补丁融合速查表 |
+| [NPM 安装指南.md](./NPM 安装指南.md) | 📦 npm 源码安装指南 |
+| [定时任务补丁指南.md](./定时任务补丁指南.md) | 🔧 补丁修改详细指南 |
+| [定时任务 Agent 说明.md](./定时任务 Agent 说明.md) | 🤖 Schedule Agent 说明 |
 
 ### 官方文档
 
@@ -125,7 +125,7 @@ cd /data/data/com.termux/files/home/qwen-code-0.12.0
 ./update-and-patch.sh
 ```
 
-详细步骤请参阅 [UPDATE_PATCH_GUIDE.md](./UPDATE_PATCH_GUIDE.md)
+详细步骤请参阅 [官方更新融合指南.md](./官方更新融合指南.md)
 
 ---
 
@@ -147,11 +147,11 @@ qwen-code/
 │       └── utils.ts                       # 工具函数
 │
 ├── README.md                              # 📖 本文件
-├── UPDATE_PATCH_GUIDE.md                  # 🔄 官方更新融合指南
-├── PATCH_QUICK_REF.md                     # 📋 速查表
-├── NPM_INSTALL_GUIDE.md                   # 📦 安装指南
-├── SCHEDULE_PATCH_GUIDE.md                # 🔧 补丁修改指南
-├── SCHEDULE_AGENT_README.md               # 🤖 Agent 说明
+├── 官方更新融合指南.md                  # 🔄 官方更新融合指南
+├── 补丁速查表.md                     # 📋 速查表
+├── NPM 安装指南.md                   # 📦 安装指南
+├── 定时任务补丁指南.md                # 🔧 补丁修改指南
+├── 定时任务 Agent 说明.md               # 🤖 Agent 说明
 └── update-and-patch.sh                    # 🔄 自动融合脚本
 ```
 
