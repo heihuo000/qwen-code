@@ -31,8 +31,12 @@ const __dirname = dirname(__filename);
  * 补丁模板集合
  */
 const patches = {
-  toolNames: "\n    SCHEDULE: 'schedule',",
-  toolDisplayNames: "\n    SCHEDULE: 'Schedule',",
+  // ToolNames - 使用双引号格式，添加到 LSP 之后
+  toolNames: `
+      SCHEDULE: "schedule",`,
+  // ToolDisplayNames - 使用双引号格式
+  toolDisplayNames: `
+      SCHEDULE: "Schedule",`,
 
   schedulerServiceField: (line: string) =>
     line.replace(
@@ -77,18 +81,18 @@ function analyzeCode(content: string) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
-    // ToolNames
-    if (line.includes("SHELL: 'run_shell_command'")) {
+    // ToolNames - 支持单引号和双引号
+    if (line.includes("SHELL:") && (line.includes("'run_shell_command'") || line.includes('"run_shell_command"'))) {
       result.toolNamesLine = i;
     }
 
-    // ToolDisplayNames
-    if (line.includes("SHELL: 'Shell'")) {
+    // ToolDisplayNames - 支持单引号和双引号
+    if (line.includes("SHELL:") && (line.includes("'Shell'") || line.includes('"Shell"'))) {
       result.toolDisplayNamesLine = i;
     }
 
     // chatRecordingService 字段
-    if (line.includes('chatRecordingService') && line.includes('void 0')) {
+    if (line.includes('chatRecordingService') && (line.includes('void 0') || line.includes('undefined'))) {
       result.configFieldLine = i;
     }
 
@@ -128,8 +132,15 @@ function applyPatch(content: string): string {
   // 1. 添加 SCHEDULE 到 ToolNames
   if (struct.toolNamesLine !== undefined) {
     const i = struct.toolNamesLine;
-    if (!lines[i].includes("SCHEDULE:")) {
-      lines[i] = lines[i].replace(/(SHELL:\s*'run_shell_command')/, "$1," + patches.toolNames);
+    const line = lines[i];
+    // 检查是否已经存在 SCHEDULE
+    if (!line.includes('SCHEDULE:')) {
+      // 如果行末有逗号，直接添加；如果没有逗号，添加逗号后再添加
+      if (line.trim().endsWith(',')) {
+        lines[i] = line + patches.toolNames;
+      } else {
+        lines[i] = line.replace(/(,?\s*$)/, ',' + patches.toolNames + '$1');
+      }
       modified++;
       success('Added SCHEDULE to ToolNames');
     }
@@ -138,8 +149,13 @@ function applyPatch(content: string): string {
   // 2. 添加 SCHEDULE 到 ToolDisplayNames
   if (struct.toolDisplayNamesLine !== undefined) {
     const i = struct.toolDisplayNamesLine;
-    if (!lines[i].includes("SCHEDULE:")) {
-      lines[i] = lines[i].replace(/(SHELL:\s*'Shell')/, "$1," + patches.toolDisplayNames);
+    const line = lines[i];
+    if (!line.includes('SCHEDULE:')) {
+      if (line.trim().endsWith(',')) {
+        lines[i] = line + patches.toolDisplayNames;
+      } else {
+        lines[i] = line.replace(/(,?\s*$)/, ',' + patches.toolDisplayNames + '$1');
+      }
       modified++;
       success('Added SCHEDULE to ToolDisplayNames');
     }
