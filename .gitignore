@@ -1,0 +1,244 @@
+# API keys and secrets
+.env
+.env~
+
+# gemini-cli settings
+# We want to keep the .gemini in the root of the repo and ignore any .gemini
+# in subdirectories. In our root .gemini we want to allow for version control
+# for subcommands.
+**/.gemini/
+!/.gemini/
+.gemini/*
+!.gemini/config.yaml
+!.gemini/commands/
+
+# Note: .qwen-clipboard/ is NOT in gitignore so Gemini can access pasted images
+
+# Dependency directory
+node_modules
+bower_components
+package-lock.json
+
+# Editors
+.idea
+*.iml
+.cursor
+.qoder
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# TypeScript build info files
+*.tsbuildinfo
+
+# Ignore built ts files
+dist
+
+# Docker folder to help skip auth refreshes
+.docker
+
+bundle
+
+# Test report files
+junit.xml
+packages/*/coverage/
+
+# Generated files
+packages/cli/src/generated/
+packages/core/src/generated/
+packages/web-templates/src/generated/
+.integration-tests/
+packages/vscode-ide-companion/*.vsix
+
+# Qwen Code Configs
+
+.qwen/
+!.qwen/commands/
+!.qwen/skills/
+logs/
+# GHA credentials
+gha-creds-*.json
+
+# Log files
+patch_output.log
+
+# docs build
+docs-site/.next
+# content is a symlink to ../docs
+docs-site/content
+
+# python cache
+__pycache__/
+
+integration-tests/concurrent-runner/output/
+integration-tests/concurrent-runner/task-*
+
+integration-tests/terminal-capture/scenarios/screenshots/
+
+# storybook
+*storybook.log
+storybook-static
+
+# Embedded git repos
+.cargo/git/checkouts/
+.iflow/history/
+.iflow/sessions/
+.local/share/radare2/
+
+# Logs
+*.log
+
+# Parent directory files (Termux home)
+../.agent-hub/
+../.android/
+../.bash_history
+../.bashrc
+../.cache/
+../.cargo/
+../.chelper/
+../.claude-code-router/
+../.claude-code/
+../.claude.json*
+../.claude/
+../.cli-proxy-api/
+../.cliproxyapi/
+../.cloudflare_token
+../.config/
+../.expo/
+../.gemini/
+../.gitconfig
+../.gradle/
+../.iflow/
+../.local/
+../.m2/
+../.message_board/
+../.node_init.cjs
+../.node_repl_history
+../.npm-global/
+../.npm/
+../.pine-passfile
+../.profile
+../.python_history
+../.qwen-ipc/
+../.qwen/
+../.ssh/
+../.ssh_servers.json
+../.termux/
+../.termux_locale_init.sh
+../.ve/
+../.wget-hsts
+../.zshrc
+../DNF*
+../KoishiEx*
+../QUICK_SHORTCUTS.md
+../QWEN*.md
+../Screen*.md
+../Termux*.md
+../add_*.py
+../add_*.sh
+../agent-hub*.sh
+../ai-*.txt
+../ai_*.py
+../android-*.patch
+../apply-*.sh
+../attach*.sh
+../bash_*.sh
+../beyond_*.py
+../beyond_*.mid
+../bin/
+../bywg
+../check_*.py
+../claude_*.json
+../claude_*.log
+../cloudflare-tools/
+../collaboration_*.md
+../deep_qa.md
+../delicate-treeview/
+../dnf-*/
+../dnf_*
+../downloads/
+../dummy_*.py
+../enhance_*.py
+../example_*.md
+../fix_*.py
+../fix_*.sh
+../ftp_server/
+../gemini*.patch
+../gemini*.zip
+../gemini_*.md
+../get_*.py
+../glibc-lib/
+../go/
+../iflow*.tgz
+../iflow_*.md
+../improvement_*.md
+../init_*.sh
+../install-*.sh
+../kali-*/
+../keyboard_*.txt
+../kimi-cli/
+../libil2cpp.so
+../list_*.py
+../manager_*.md
+../mcp-builder/
+../mcp_*.log
+../mcp_*.pid
+../message-board-*.md
+../message-board-*.zip
+../message-board-system/
+../message_sdk.py
+../modify_*.py
+../move_*.py
+../my_custom_ai.sh
+../node_modules/
+../od/
+../opencode-*.tar.gz
+../opencode-src/
+../original_content.txt
+../package*.json
+../patch_*.js
+../project_*.md
+../qwen*.sh
+../qwen*.txt
+../qwen*.log
+../qwen*.zip
+../qwen*.md
+../qwen_*.sh
+../qwen_*.txt
+../qwen_*.md
+../qwen_*.py
+../qwen_*
+../rag_*.json
+../rag_system/
+../remove-*.sh
+../remove_*.py
+../reorder_*.py
+../rish*
+../run-*.sh
+../run_*.sh
+../server.log
+../session_*.sh
+../setup*.bash
+../sharp-wasm-test/
+../shell-*.patch
+../ssh-mcp-npx/
+../start_*.sh
+../storage/
+../termux-*.sh
+../termux_*.py
+../termux_*.sh
+../test-*.js
+../test-*.mjs
+../test-*.sh
+../test_*.py
+../test_*.log
+../test_*.md
+../tmp/
+../tools/
+../update-*.sh
+../update_*.py
+../upgrade_*.py
+../web_server.log
+../website_copy_*/
+../*.tar.gz
