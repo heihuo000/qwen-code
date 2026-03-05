@@ -1,17 +1,24 @@
 {
   "name": "@qwen-code/schedule-agent",
   "version": "1.0.0",
-  "description": "Qwen Code Schedule Agent - 智能定时任务补丁",
+  "description": "Qwen Code Schedule Agent - 智能定时任务补丁工具",
+  "author": "Qwen Code Contributors",
+  "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/agent.js",
+  "types": "./dist/agent.d.ts",
   "bin": {
-    "schedule-agent": "./dist/agent.js"
+    "schedule-agent": "./dist/agent.js",
+    "qwen-schedule": "./dist/agent.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "start": "node dist/agent.js",
     "install-patch": "node dist/agent.js install",
     "uninstall-patch": "node dist/agent.js uninstall",
@@ -22,11 +29,23 @@
     "schedule",
     "agent",
     "patch",
-    "mcp"
+    "mcp",
+    "cron",
+    "task",
+    "automation"
   ],
   "engines": {
     "node": ">=20.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QwenLM/qwen-code.git",
+    "directory": "schedule-agent"
+  },
+  "bugs": {
+    "url": "https://github.com/QwenLM/qwen-code/issues"
+  },
+  "homepage": "https://github.com/QwenLM/qwen-code/tree/main/schedule-agent#readme",
   "mcp": {
     "commands": [
       {
@@ -40,18 +59,6 @@
       {
         "name": "check",
         "description": "Check installation status"
-      },
-      {
-        "name": "list-tasks",
-        "description": "List all scheduled tasks"
-      },
-      {
-        "name": "add-task",
-        "description": "Add a new scheduled task"
-      },
-      {
-        "name": "remove-task",
-        "description": "Remove a scheduled task"
       }
     ]
   }
