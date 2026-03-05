@@ -1,0 +1,58 @@
+{
+  "name": "@qwen-code/schedule-agent",
+  "version": "1.0.0",
+  "description": "Qwen Code Schedule Agent - 智能定时任务补丁",
+  "type": "module",
+  "main": "./dist/agent.js",
+  "bin": {
+    "schedule-agent": "./dist/agent.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/agent.js",
+    "install-patch": "node dist/agent.js install",
+    "uninstall-patch": "node dist/agent.js uninstall",
+    "check": "node dist/agent.js check"
+  },
+  "keywords": [
+    "qwen-code",
+    "schedule",
+    "agent",
+    "patch",
+    "mcp"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "mcp": {
+    "commands": [
+      {
+        "name": "install",
+        "description": "Install schedule tool patch"
+      },
+      {
+        "name": "uninstall",
+        "description": "Uninstall schedule tool patch"
+      },
+      {
+        "name": "check",
+        "description": "Check installation status"
+      },
+      {
+        "name": "list-tasks",
+        "description": "List all scheduled tasks"
+      },
+      {
+        "name": "add-task",
+        "description": "Add a new scheduled task"
+      },
+      {
+        "name": "remove-task",
+        "description": "Remove a scheduled task"
+      }
+    ]
+  }
+}
