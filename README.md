@@ -73,7 +73,6 @@ qwen -p "删除任务 test"
 | [补丁速查表.md](./补丁速查表.md) | 📋 补丁融合速查表 |
 | [NPM 安装指南.md](./NPM 安装指南.md) | 📦 npm 源码安装指南 |
 | [定时任务补丁指南.md](./定时任务补丁指南.md) | 🔧 补丁修改详细指南 |
-| [定时任务 Agent 说明.md](./定时任务 Agent 说明.md) | 🤖 Schedule Agent 说明 |
 
 ### 官方文档
 
@@ -141,17 +140,11 @@ qwen-code/
 │           └── tools/
 │               └── scheduleTool.ts        # ⏰ 定时工具（新增）
 │
-├── schedule-agent/                        # 🤖 补丁工具目录
-│   └── src/
-│       ├── agent.ts                       # 补丁主程序
-│       └── utils.ts                       # 工具函数
-│
 ├── README.md                              # 📖 本文件
 ├── 官方更新融合指南.md                  # 🔄 官方更新融合指南
 ├── 补丁速查表.md                     # 📋 速查表
 ├── NPM 安装指南.md                   # 📦 安装指南
 ├── 定时任务补丁指南.md                # 🔧 补丁修改指南
-├── 定时任务 Agent 说明.md               # 🤖 Agent 说明
 └── update-and-patch.sh                    # 🔄 自动融合脚本
 ```
 
