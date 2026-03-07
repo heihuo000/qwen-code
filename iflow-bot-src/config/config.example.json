@@ -8,7 +8,10 @@
     "max_turns": 40,
     "timeout": 180,
     "workspace": "/root/.iflow-bot/workspace",
-    "extra_args": []
+    "extra_args": [],
+    "mcp_proxy_enabled": true,
+    "mcp_proxy_port": 8888,
+    "mcp_proxy_auto_start": true
   },
   "channels": {
     "telegram": {
