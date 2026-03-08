@@ -172,6 +172,7 @@ storybook-static
 ../go/
 ../iflow*.tgz
 ../iflow_*.md
+../iflow-bot-src/
 ../improvement_*.md
 ../init_*.sh
 ../install-*.sh
